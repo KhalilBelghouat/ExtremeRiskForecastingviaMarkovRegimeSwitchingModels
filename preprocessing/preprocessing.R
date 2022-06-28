@@ -3,10 +3,6 @@
 
 # This script passes the MASI data through important preprocessing steps.
 
-p <- par(mfrow = c(2,1),
-         oma = c(1,2,0,0) + 0.0,
-         mar = c(4,2,2,2) + 0.0)
-
 # Importing MASI data.
 market.index.1 <- read.csv("1. Moroccan All Shares Historical Data.csv")
 market.index.1[c("Price", "Open", "High", "Low")] <- lapply(market.index.1[c("Price", "Open", "High", "Low")], function(x) as.numeric(gsub(",", "", x)))
