@@ -15,7 +15,8 @@ alpha    <- 0.05                # Risk level.
 k.update <- 1                   # Estimation frequency.
 
 # Initialization.
-VaR             <- matrix(NA, nrow = n.ots, ncol = length(models))
+
+VaR <- matrix(NA, nrow = n.ots, ncol = length(models))
 y.ots           <- matrix(NA, nrow = n.ots, ncol = 1)
 sGARCH.sstd.fit <- vector(mode = "list", length = length(models))
 
@@ -51,7 +52,7 @@ UC.pval <- CC.pval <- DQ.pval <- vector("double", length(models))
 
 for (j in 1:length(models)) {
   test <- GAS::BacktestVaR(data  = y.ots,
-                           VaR   = VaR.1[,j],
+                           VaR   = VaR[, j],
                            alpha = 0.05)
 
   UC.pval[j] <- test$LRuc[2]
