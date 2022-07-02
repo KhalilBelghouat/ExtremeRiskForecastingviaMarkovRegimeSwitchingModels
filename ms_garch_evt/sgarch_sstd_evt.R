@@ -22,8 +22,8 @@ sGARCH.sstd.fit <- vector(mode = "list", length = length(models))
 
 # Iterate over out-of-sample time.
 for (i in 1:n.ots) {
-  y.its    <- MASI[i:(n.its + i - 1)] 
-  y.ots[i] <- MASI[n.its + i]         
+  y.its    <- MASI[i:(n.its + i - 1)] # in-sample data.
+  y.ots[i] <- MASI[n.its + i]         # out-of-sample data.
 
   # Iterate over models.
   for (j in 1:length(models)) {
